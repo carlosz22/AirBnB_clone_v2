@@ -2,6 +2,7 @@
 # Install Nginx and configure it
 
 apt-get -y update
+apt-get install -y nginx 
 mkdir -p /data/web-static/releases/test
 mkdir -p /data/web-static/shared
 mkdir -p /data/web-static/current
