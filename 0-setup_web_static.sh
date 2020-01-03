@@ -8,7 +8,6 @@ mkdir -p /data/web_static/
 mkdir -p /data/web_static/releases/
 mkdir -p /data/web_static/releases/test/
 mkdir -p /data/web_static/shared/
-mkdir -p /data/web_static/current/
 echo "<!DOCTYPE html>
 <html>
         <head>
