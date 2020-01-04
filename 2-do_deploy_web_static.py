@@ -27,7 +27,7 @@ def do_pack():
         return None
 
 
-def do_deploy(archive_path):
+def do_deploy(archive_path=None):
     """
     Deploy the file to web servers
     """
