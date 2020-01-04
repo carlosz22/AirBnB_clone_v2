@@ -28,13 +28,11 @@ def do_pack():
         return None
 
 
-def do_deploy(archive_path=None):
+def do_deploy(archive_path):
     """
     Deploy the file to web servers
     """
-    if archive_path is None:
-        return False
-    if not os.path.isfile(archive_path):
+    if not os.path.exists(archive_path):
         return False
 
     try:
