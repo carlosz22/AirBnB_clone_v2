@@ -5,6 +5,7 @@ and upload the new web_static to web servers
 """
 from fabric.api import *
 import datetime
+import os.path
 
 
 env.hosts = ['35.237.240.111', '104.196.143.231']
@@ -32,6 +33,8 @@ def do_deploy(archive_path=None):
     Deploy the file to web servers
     """
     if archive_path is None:
+        return False
+    if not os.path.isfile(archive_path):
         return False
 
     try:
