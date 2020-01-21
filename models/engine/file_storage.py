@@ -53,7 +53,7 @@ class FileStorage:
             json.dump(my_dict, f)
 
     def reload(self):
-        """serialize the file path to JSON file path
+        """Deserialize the file path to JSON file path
         """
         try:
             with open(self.__file_path, 'r', encoding="UTF-8") as f:
@@ -83,3 +83,9 @@ class FileStorage:
                     raise KeyError()
             except KeyError:
                 print("** no instance found **")
+
+    def close(self):
+        """
+        CHANGE THIS
+        """
+        self.reload()

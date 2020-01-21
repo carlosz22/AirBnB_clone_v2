@@ -54,7 +54,7 @@ class Place(BaseModel, Base):
             reviews_relation = []
             for review in reviews.values():
                 if review.place_id == self.id:
-                    reviews_relation = reviews_relation.append(review)
+                    reviews_relation.append(review)
             return reviews_relation
 
         @property
@@ -64,7 +64,7 @@ class Place(BaseModel, Base):
             amenities_relation = []
             for amenity in amenities.values():
                 if amenity.id in self.amenity_ids:
-                    amenities_relation = amenities_relation.append(amenity)
+                    amenities_relation.append(amenity)
             return amenities_relation
 
         @amenities.setter
