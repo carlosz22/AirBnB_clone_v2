@@ -28,7 +28,7 @@ class DBStorage:
         passwd = os.environ.get('HBNB_MYSQL_PWD')
         host = os.environ.get('HBNB_MYSQL_HOST')
         database = os.environ.get('HBNB_MYSQL_DB')
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'
+        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}?charset=utf8'
                                       .format(user, passwd, host, database),
                                       pool_pre_ping=True)
         Base.metadata.create_all(self.__engine)

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Flask web app to fetch cities by states
+Flask web app to fetch filters for AirBnB
 """
 from flask import Flask, render_template
 from models import storage
@@ -13,11 +13,13 @@ def teardown_appcontext(txt):
     storage.close()
 
 
-@app.route('/cities_by_states', strict_slashes=False)
-def show_cities_by_state():
-    """Show a list of states"""
+@app.route('/hbnb_filters', strict_slashes=False)
+def show_filters():
+    """Show AirBnB filters (states, amenities)"""
     all_states = storage.all('State')
-    return render_template('8-cities_by_states.html', states=all_states)
+    all_amenities = storage.all('Amenity')
+    return render_template('10-hbnb_filters.html', states=all_states,
+                           amenities=all_amenities)
 
 
 if __name__ == '__main__':
